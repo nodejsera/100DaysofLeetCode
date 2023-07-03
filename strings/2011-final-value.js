@@ -1,0 +1,95 @@
+/**
+ * There is a programming language with only four operations and one variable X:
+
+++X and X++ increments the value of the variable X by 1.
+--X and X-- decrements the value of the variable X by 1.
+Initially, the value of X is 0.
+
+Given an array of strings operations containing a list of operations, return the final value of X after performing all the operations.
+
+ 
+
+Example 1:
+
+Input: operations = ["--X","X++","X++"]
+Output: 1
+Explanation: The operations are performed as follows:
+Initially, X = 0.
+--X: X is decremented by 1, X =  0 - 1 = -1.
+X++: X is incremented by 1, X = -1 + 1 =  0.
+X++: X is incremented by 1, X =  0 + 1 =  1.
+Example 2:
+
+Input: operations = ["++X","++X","X++"]
+Output: 3
+Explanation: The operations are performed as follows:
+Initially, X = 0.
+++X: X is incremented by 1, X = 0 + 1 = 1.
+++X: X is incremented by 1, X = 1 + 1 = 2.
+X++: X is incremented by 1, X = 2 + 1 = 3.
+Example 3:
+
+Input: operations = ["X++","++X","--X","X--"]
+Output: 0
+Explanation: The operations are performed as follows:
+Initially, X = 0.
+X++: X is incremented by 1, X = 0 + 1 = 1.
+++X: X is incremented by 1, X = 1 + 1 = 2.
+--X: X is decremented by 1, X = 2 - 1 = 1.
+X--: X is decremented by 1, X = 1 - 1 = 0.
+ */
+
+
+//My Final Solution:
+/**
+ * @param {string[]} operations
+ * @return {number}
+ */
+var finalValueAfterOperations = function(operations) {
+    let val = 0;
+    for(let i=0; i<operations.length; i++) {
+        if (operations[i] === "X++" || operations[i] === "++X") {
+            val++;
+        }
+        if (operations[i] === "X--" || operations[i] === "--X") {
+            val--;
+        }
+    }
+    return val;
+};
+
+//Solution 2: 
+//Best solution with respect to time
+
+/**
+ * @param {string[]} operations
+ * @return {number}
+ */
+
+var finalValueAfterOperations = function(operations) {
+    let o = 0;
+    for (let i = 0; i < operations.length; i++) {
+        let cadaun = operations[i];
+        if (cadaun === '++X' || cadaun === 'X++') {
+            o++;
+        } else if (cadaun === '--X' || cadaun === 'X--') {
+            o--;
+        }
+    }
+    return o;
+};
+/**
+ * Solution 3: Best Memory solution
+ */
+/**
+ * @param {string[]} operations
+ * @return {number}
+ */
+var finalValueAfterOperations = function (operations) {
+    let result = 0;
+    for (let i = 0; i < operations.length; i++)
+      operations[i].includes("+") ? result++ : result--;
+    return result;
+  };
+
+

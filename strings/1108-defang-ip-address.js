@@ -20,7 +20,7 @@ The given address is a valid IPv4 address.
 
 
 
-//Solution 2: My Solution
+//Solution 1: My Solution
 /**
  * @param {string} address
  * @return {string}
