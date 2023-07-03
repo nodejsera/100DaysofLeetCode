@@ -90,6 +90,6 @@ var finalValueAfterOperations = function (operations) {
     for (let i = 0; i < operations.length; i++)
       operations[i].includes("+") ? result++ : result--;
     return result;
-  };
+};
 
 
