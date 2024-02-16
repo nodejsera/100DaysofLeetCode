@@ -32,3 +32,42 @@ x is a lowercase English letter.
 words[i] consists only of lowercase English letters.
  */
 
+//My solution:
+/**
+ * @param {string[]} words
+ * @param {character} x
+ * @return {number[]}
+ */
+var findWordsContaining = function(words, x) {
+    const output = [];
+    for (word in words) {
+        if(words[word].includes(x)) {
+            output.push(word);
+        }
+    }
+    return output;
+    
+};
+
+//Best Time solution:
+/**
+ * @param {string[]} words
+ * @param {character} x
+ * @return {number[]}
+ */
+var findWordsContaining = function(words, x) {
+    return words.reduce((a, v, i) => v.indexOf(x) !== -1 ? [...a, i] : a, []);
+};
+
+//Best Memory solution:
+/**
+ * @param {string[]} words
+ * @param {character} x
+ * @return {number[]}
+ */
+const findWordsContaining = (words, x) => {
+    return words.reduce((acc,el,id) => {
+        if (el.includes(x)) acc.push(id);
+        return acc;
+    },[])
+};
