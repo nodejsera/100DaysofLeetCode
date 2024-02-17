@@ -51,3 +51,40 @@ var numIdenticalPairs = function(nums) {
     }
     return gpSum;
 };
+
+//Best Time Solution:
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var numIdenticalPairs = function(nums) {
+    let numberOfGoodPairs = 0;
+    for(let i = 0; i < nums.length; i++){
+        for(let j = i+1; j< nums.length; j++){
+            if(nums[j] === nums[i]){
+                numberOfGoodPairs++;
+            }
+        }
+    }
+    return numberOfGoodPairs
+};
+
+//Best memory Solutino:
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var numIdenticalPairs = function(nums) {
+    let numberOfPairs = 0;
+
+    for (let i = 0; i < nums.length; i++ ) {
+        for (let j = 0; j < nums.length; j++) {
+            if (nums[i] == nums[j] && i<j) {
+                numberOfPairs += 1;
+            }
+        }
+    }
+
+    return numberOfPairs;
+    
+};
