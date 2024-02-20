@@ -27,25 +27,19 @@ Each element in nums appears exactly three times except for one element which ap
  * @param {number[]} nums
  * @return {number}
  */
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
 var singleNumber = function(nums) {
-    const counter = {};
-    nums.forEach(num => {
-        if (counter[num]) {
-            counter[num] += 1
-        } else {
-            counter[num] = 1
-        }
-    })
-    let val = 0;
-    for (let elem in counter) {
-                if (counter.hasOwnProperty(elem)) {
-                    if (counter[elem] === 1) {
-                        val = elem;
-                    }
-                        
-                }
+    let ones = 0;
+    let twos=0
+    
+    for(let i=0; i<nums.length;i++) {
+        ones = (ones ^ nums[i]) & ~twos;
+        twos = (twos ^ nums[i]) & ~ones;
     }
-    return val;
+    return ones;
 };
 
 //Best Time Solution:
