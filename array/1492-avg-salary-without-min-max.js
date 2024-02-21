@@ -48,3 +48,21 @@ var average = function(salary) {
     return sal/(salary.length -2)
 };
 
+
+//Best Time Solution:
+/**
+ * @param {number[]} salary
+ * @return {number}
+ */
+var average = function(salary) {
+    const max = Math.max(...salary);
+    const min = Math.min(...salary);
+
+    const filtered = salary.filter(item => item !== max && item !== min);
+
+    const sumOfFiltered = filtered.reduce((a, b) => a + b, 0);
+    return sumOfFiltered / filtered.length;
+};
+
+//Best memory solution:
+
