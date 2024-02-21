@@ -62,3 +62,23 @@ var kidsWithCandies = function(candies, extraCandies) {
 };
 
 //Best Solution:
+/**
+ * @param {number[]} candies
+ * @param {number} extraCandies
+ * @return {boolean[]}
+ */
+var kidsWithCandies = function (candies, extraCandies) {
+    return candies.map((ele) => ele + extraCandies >= Math.max(...candies));
+};
+
+//Best Memory Solution
+/**
+ * @param {number[]} candies
+ * @param {number} extraCandies
+ * @return {boolean[]}
+ */
+var kidsWithCandies = function(candies, extraCandies) {
+    let greatest = [...candies].sort((a,b)=> b-a)[0];
+    candies = candies.map((ele)=>ele+extraCandies>=greatest);
+    return candies;
+};
