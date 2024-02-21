@@ -25,3 +25,26 @@ Constraints:
 1000 <= salary[i] <= 106
 All the integers of salary are unique.
  */
+
+//My Solution: 
+/**
+ * @param {number[]} salary
+ * @return {number}
+ */
+var average = function(salary) {
+    let sal = 0;
+    let min = salary[0];
+    let max = salary[0];
+    salary.map((s) => {
+        sal += s;
+        if (s > max) {
+            max = s;
+        }
+        if(s < min) {
+            min = s;
+        }
+    })
+    sal = sal - min - max;
+    return sal/(salary.length -2)
+};
+
