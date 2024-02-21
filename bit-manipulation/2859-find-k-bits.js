@@ -59,7 +59,7 @@ var sumIndicesWithKSetBits = function(nums, k) {
 };
 
 //Best Time Solution:
-ar countSetBits = function(num) {
+var countSetBits = function(num) {
     let count = 0;
     while (num > 0) {
         count += num & 1;  // Check if the rightmost bit is set
