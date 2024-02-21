@@ -36,3 +36,29 @@ n == candies.length
 1 <= candies[i] <= 100
 1 <= extraCandies <= 50
  */
+
+//My Solution: 
+/**
+ * @param {number[]} candies
+ * @param {number} extraCandies
+ * @return {boolean[]}
+ */
+var kidsWithCandies = function(candies, extraCandies) {
+    const respArr = [];
+    let max = 0;
+    candies.forEach((can) => {
+        if(can > max) {
+            max = can;
+        }
+    })
+    candies.forEach((can) => {
+        if ((can + extraCandies) >= max ) {
+            respArr.push(true);
+        } else {
+            respArr.push(false)
+        }
+    })
+    return respArr
+};
+
+//Best Solution:
