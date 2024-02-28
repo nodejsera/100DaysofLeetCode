@@ -55,3 +55,6 @@ var theMaximumAchievableX = function(num, t) {
 
     return num
 };
+
+//Best Memory solution:
+var theMaximumAchievableX=(num,t)=>num+2*t
