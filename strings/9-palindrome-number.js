@@ -60,3 +60,40 @@ const x2 = reverseDigits(x);
 return (x===x2)? true: false;
 };
 
+//Best Time solution:
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
+var isPalindrome = function(x) {
+    x = x.toString()
+    let result = true
+    let mid = x.length / 2 + 1
+    for (let index = 0; index < mid; index++) {
+        left = x[index]
+        right = x[x.length - index - 1]
+        if (left != right) {
+            result = false
+            return result
+        }
+    }
+
+    return result
+};
+
+//Best memory Solution:
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
+var isPalindrome = function(x) {
+    let n=x;
+    let rev=0
+    while(n>0){
+     let temp=n%10
+     rev=rev*10+temp
+     n=Math.floor(n/10);
+    }
+    return rev==x
+ };
+ 
