@@ -40,3 +40,23 @@ var isPalindrome = function(x) {
     const x2 = x.toString().split("").reverse().join("");
     return (x==x2)? true: false;
 };
+
+//My Solution 2
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
+function reverseDigits(num) { 
+    let rev_num = 0; 
+    while(num > 0) 
+    { 
+        rev_num = rev_num * 10 + num % 10; 
+        num = Math.floor(num / 10); 
+    } 
+    return rev_num; 
+} 
+var isPalindrome = function(x) {
+const x2 = reverseDigits(x);
+return (x===x2)? true: false;
+};
+
