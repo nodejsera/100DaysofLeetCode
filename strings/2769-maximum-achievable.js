@@ -39,3 +39,19 @@ Constraints:
 var theMaximumAchievableX = function(num, t) {
     return num +t+t;
 };
+
+//Best Time solution:
+/**
+ * @param {number} num
+ * @param {number} t
+ * @return {number}
+ */
+var theMaximumAchievableX = function(num, t) {
+    
+    for(let i=1; i<=t; i++){
+        
+        num=num+2
+    }
+
+    return num
+};
