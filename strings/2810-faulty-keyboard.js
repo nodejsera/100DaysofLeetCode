@@ -42,6 +42,8 @@ s consists of lowercase English letters.
 s[0] != 'i'
 */
 
+//My Solution: 
+
 /**
  * @param {string} s
  * @return {string}
@@ -50,4 +52,35 @@ var finalString = function(s) {
     const arr = []
     s.split("").map((e) => { if(e === "i"){ arr.reverse(); } else { arr.push(e); } });
     return arr.join("");
+};
+
+//Best Time Solution: 
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var finalString = function(s) {
+    resultStr = []
+    for(let i=0;i<s.length;i++){
+        if(s[i]==='i')
+            resultStr.reverse()
+        else
+            resultStr.push(s[i])
+    }
+    return resultStr.join('')
+};
+//Best Memory Solution:
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var finalString = function(s) {
+    resultStr = []
+    for(let i=0;i<s.length;i++){
+        if(s[i]==='i')
+            resultStr.reverse()
+        else
+            resultStr.push(s[i])
+    }
+    return resultStr.join('')
 };
