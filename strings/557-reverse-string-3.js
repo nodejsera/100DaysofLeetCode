@@ -36,3 +36,25 @@ var reverseWords = function(s) {
 
     return arr.join(" ");
 };
+
+//Best Time Solution:
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var reverseWords = function(s) {
+    //const arr = s.split(' ')
+    
+    return s.split(' ').map(word => word.split('').reverse().join('')).join(' ')
+
+};
+
+
+//Best Memory Solution: 
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var reverseWords = function(s) {
+    return s.split(' ').map((e) => e.split('').reverse().join('')).join(' ');
+};
