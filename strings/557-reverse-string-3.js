@@ -23,3 +23,16 @@ All the words in s are separated by a single space.
  */
 
 //My Solution: 
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var reverseWords = function(s) {
+    let arr = [];
+    s.split(" ").forEach((val) => {
+        const d = val.split("").reverse().join("");
+        arr.push(d);
+    })
+
+    return arr.join(" ");
+};
