@@ -40,3 +40,6 @@ var sortedSquares = function(nums) {
 };
 
 //Trying to do it in O(n)
+
+
+//Best Solution:
