@@ -57,7 +57,7 @@ var getCommon = function(nums1, nums2) {
  * @param {number[]} nums2
  * @return {number}
  time complexity: O(n + m);
- space complexity: O(1)
+ space complexity:   O(1)
  */
  var getCommon = function(nums1, nums2) {
     let p1 = 0;
