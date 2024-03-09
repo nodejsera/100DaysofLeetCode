@@ -50,3 +50,28 @@ var getCommon = function(nums1, nums2) {
 
     return common !== null ? common : -1;
 };
+
+//Best Time Solution:
+/**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number}
+ time complexity: O(n + m);
+ space complexity: O(1)
+ */
+ var getCommon = function(nums1, nums2) {
+    let p1 = 0;
+    let p2 = 0;
+    while(p1 < nums1.length && p2 < nums2.length){
+        if(nums1[p1] == nums2[p2]) {
+            return nums1[p1]
+        }else if(nums1[p1] < nums2[p2]) {
+            p1 += 1
+        } else{
+            p2 += 1
+        }
+    }
+    return -1;
+};
+
+//Best Time solution:
