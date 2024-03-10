@@ -56,3 +56,19 @@ var intersection = function(nums1, nums2) {
     
     return Array.from(intersectionSet)
 };
+
+//Best Memory Solution:
+/**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number[]}
+ */
+var intersection = function(nums1, nums2) {
+    let res = []
+    let smallArray = nums1.length >= nums2.length ? nums2:nums1
+    let bigArray = nums1.length >= nums2.length ? nums1:nums2
+    for(let i =0;i<smallArray.length;i++){
+        if(bigArray.includes(smallArray[i]) && !res.includes(smallArray[i])) res.push(smallArray[i])
+    }
+    return res
+};
