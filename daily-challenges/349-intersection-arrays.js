@@ -64,7 +64,8 @@ var intersection = function(nums1, nums2) {
  * @return {number[]}
  */
 var intersection = function(nums1, nums2) {
-    let res = []
+    let res = [];
+
     let smallArray = nums1.length >= nums2.length ? nums2:nums1
     let bigArray = nums1.length >= nums2.length ? nums1:nums2
     for(let i =0;i<smallArray.length;i++){
