@@ -45,3 +45,27 @@ var checkIfPangram = function(sentence) {
     }
     return false;
 };
+
+//Best Time solution: 
+/**
+ * @param {string} sentence
+ * @return {boolean}
+ */
+var checkIfPangram = function(sentence) {
+    // initialize set or data structure to track 
+let letterSet = new Set()
+    //iterate over each character in the sentence
+for (let i = 0; i < sentence.length; i++) {
+    letterSet.add(sentence[i])
+}
+    // add each character to the set
+
+    //check the size of the set
+    if (letterSet.size === 26) {
+        return true
+    } else {
+        return false
+    }
+
+    //return true or false based on the set
+};
