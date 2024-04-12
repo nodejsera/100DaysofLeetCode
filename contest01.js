@@ -25,12 +25,6 @@ Output: 1
 Explanation: We perform the following operations:
 - Delete the first two elements, with score 3 + 2 = 5, nums = [6,1,4].
 We are unable to perform any more operations as the score of the next operation isn't the same as the previous one.
- 
-
-Constraints:
-
-2 <= nums.length <= 100
-1 <= nums[i] <= 1000
  */
 
 /**
